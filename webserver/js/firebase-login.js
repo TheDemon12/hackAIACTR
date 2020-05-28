@@ -1,6 +1,3 @@
-// TODO
-// add location href
-
 const auth = firebaseConfig1.auth();
 const statDiv = document.getElementById('status');
 const noEmail =
@@ -8,7 +5,7 @@ const noEmail =
 const form = document.getElementById('formLogin');
 auth.onAuthStateChanged(function (user) {
 	if (user) {
-		// window.location.href = '';
+		window.location.href = 'postLogin/options.html';
 	} else {
 		const submit = document.getElementById('loginBt');
 
@@ -21,11 +18,12 @@ auth.onAuthStateChanged(function (user) {
 				.then(function () {
 					statDiv.style.color = 'rgb(0,255,0)';
 					statDiv.innerText = 'Success';
-					window.location.href = '';
+					window.location.href = 'postLogin/options.html';
 					statDiv.style.visibility = 'visible';
 				})
 				.catch(function (error) {
-					//Handle Errors
+					// Handle Errors here.
+					var errorCode = error.code;
 					var errorMessage = error.message;
 					console.log(errorMessage);
 
@@ -35,9 +33,11 @@ auth.onAuthStateChanged(function (user) {
 							.then(function () {
 								statDiv.style.color = 'rgb(0,255,0)';
 								statDiv.innerText = 'Created a new user';
-								window.location.href = '';
+								window.location.href = 'postLogin/options.html';
 							})
 							.catch(function (error) {
+								// Handle Errors here.
+								var errorCodeSignUp = error.code;
 								var errorMessageSignUp = error.message;
 								console.log(errorMessageSignUp);
 								statDiv.style.color = 'rgb(255,0,0)';
