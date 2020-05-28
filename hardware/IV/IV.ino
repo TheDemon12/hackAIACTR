@@ -35,5 +35,19 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-
+  sensorValue=analogRead(ldr);
+  delay(100);
+  Firebase.setFloat("/Room234/Bed10/",sensorValue);
+   if(sensorValue<580) 
+  {
+    isEmpty=false;
+    Firebase.setBool("/Room234/Bed10/dripStatus",isEmpty);
+  }
+  if(sensorValue>580)
+  {
+    isEmpty=true;
+    Firebase.setBool("/Room234/Bed10/dripStatus",isEmpty);
+    tone(D1,200,300);
+  }
+  delay(100);
 }
