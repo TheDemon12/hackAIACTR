@@ -12,7 +12,9 @@
 #define WIFI_SSID "Galaxy"
 #define WIFI_PASSWORD "ssingh9970"
 
-
+int ldr=A0;
+float sensorValue=0;
+boolean isEmpty;
 
 void setup() {
   // put your setup code here, to run once:
