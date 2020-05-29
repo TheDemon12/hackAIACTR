@@ -55,3 +55,9 @@ body {
 .form-inline button {
 	font-weight: 500;
 }
+
+@media screen and (max-width: 500px) {
+	#logo {
+		max-width: 80px;
+	}
+}
