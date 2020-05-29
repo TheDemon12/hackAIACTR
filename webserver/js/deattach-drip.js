@@ -1,12 +1,10 @@
 const checkBtn = document.getElementById('check');
-const attachDripBtn = document.getElementById('discharge');
+const deattachDripBtn = document.getElementById('discharge');
 const message = document.getElementById('message');
 const form = document.getElementById('patIdForm');
 const patDiv = document.getElementById('pat');
-const ivForm = document.getElementById('ivSelectForm');
-const ivFluid = document.getElementById('ivSelect');
 var patientFound = 0;
-var dripFound = 0;
+var dripFound;
 document
 	.getElementById('inputPatientID')
 	.addEventListener('keypress', function (event) {
@@ -70,7 +68,7 @@ let patient = new Patient();
 checkBtn.addEventListener('click', function () {
 	pat.style.visibility = 'hidden';
 	message.style.visibility = 'hidden';
-	attachDripBtn.style.visibility = 'hidden';
+	deattachDripBtn.style.visibility = 'hidden';
 	const patientID = document.getElementById('inputPatientID').value;
 	db1
 		.ref()
@@ -117,65 +115,52 @@ checkBtn.addEventListener('click', function () {
 				roomNumber.innerHTML = '<b>ROOM NUMBER: </b>' + patient.roomNumber;
 				bedNumber.innerHTML = '<b>BED NUMBER : </b>' + patient.bedNumber;
 				pat.style.visibility = 'visible';
-				attachDripBtn.style.visibility = 'visible';
-				ivForm.style.display = 'block';
+				deattachDripBtn.style.visibility = 'visible';
+				// ivForm.style.display = 'block';
 			}
 		});
 });
 
-attachDripBtn.addEventListener('click', function () {
-	if (ivFluid.value) {
-		db2
-			.ref()
-			.once('value')
-			.then(function (snapshot) {
-				snapshot.forEach(function (childSnapshot) {
-					if (patient.roomNumber == parseInt(childSnapshot.key.slice(12), 10)) {
-						childSnapshot.forEach(function (child2Snapshot) {
-							if (
-								patient.bedNumber == parseInt(child2Snapshot.key.slice(11), 10)
-							) {
-								console.log(
-									child2Snapshot.child('patientName').val().toUpperCase()
-								);
-								dripFound = 1;
-							}
-						});
-					}
-				});
-
-				if (dripFound == 0) {
-					addDrip();
-				} else {
-					message.innerHTML =
-						'ERROR : DRIP IS ALREADY ATTACHED TO THE PATIENT <br> DE-ATTACH THE DRIP FIRST TO ATTACH NEW';
-					message.style.visibility = 'visible';
-					message.style.color = 'rgb(255,0,0)';
+deattachDripBtn.addEventListener('click', function () {
+	dripFound = 0;
+	db2
+		.ref()
+		.once('value')
+		.then(function (snapshot) {
+			snapshot.forEach(function (childSnapshot) {
+				if (patient.roomNumber == parseInt(childSnapshot.key.slice(12), 10)) {
+					childSnapshot.forEach(function (child2Snapshot) {
+						if (
+							patient.bedNumber == parseInt(child2Snapshot.key.slice(11), 10)
+						) {
+							console.log(
+								child2Snapshot.child('patientName').val().toUpperCase()
+							);
+							dripFound = 1;
+						}
+					});
 				}
 			});
-	} else {
-		message.innerHTML = 'ERROR : IV TYPE IS REQUIRED';
-		message.style.visibility = 'visible';
-		message.style.color = 'rgb(255,0,0)';
-	}
+
+			if (dripFound == 0) {
+				message.innerHTML = 'ERROR : NO DRIP IS ATTACHED TO THE PATIENT';
+				message.style.visibility = 'visible';
+				message.style.color = 'rgb(255,0,0)';
+			} else {
+				removeDrip();
+			}
+		});
 });
 
-function addDrip() {
-	message.innerHTML = 'SUCCESS : DRIP IS SUCCESSFULLY ATTACHED';
+function removeDrip() {
+	message.innerHTML = 'SUCCESS : DRIP IS SUCCESSFULLY DETACHED';
 	message.style.color = 'rgb(0,115,255)';
 	message.style.visibility = 'visible';
 
 	db2
-		.ref(`Room Number ${patient.roomNumber}/Bed Number ${patient.bedNumber}`)
-		.set({
-			patientName: patient.name,
-			patientBloodGroup: patient.bloodGroup,
-			consultingDoctor: patient.doctor,
-			dripStatus: false,
-			patientId: patient.id,
-			patientSymptoms: patient.symptoms,
-			patientIVFluid: ivFluid.value,
-		});
+		.ref(`Room Number ${patient.roomNumber}`)
+		.child(`Bed Number ${patient.bedNumber}`)
+		.remove();
 
-	attachDripBtn.style.visibility = 'hidden';
+	deattachDripBtn.style.visibility = 'hidden';
 }
