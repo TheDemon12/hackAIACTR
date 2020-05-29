@@ -30,7 +30,7 @@
           <a class="nav-link" href="#">ATTACH DRIP <span class="sr-only">(current)</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="deattachDrip.html">DE-ATTACH DRIP</a>
+          <a class="nav-link" href="deattachDrip.html">DETACH DRIP</a>
         </li>
 	      <li class="nav-item ">
 	        <a class="nav-link" href="showEntry.html">SHOW STATUS</a>
@@ -51,7 +51,7 @@
     <div class="container">
       <form id="patIdForm">
         <div class="form-group">
-          <label><b>INPUT PATIENT ID</b></label>
+          <label><b>INPUT PATIENT ID TO BE ATTACHED</b></label>
           <input type="number" class="form-control" id="inputPatientID">
         </div>
         <button type="button" id="check" class="btn btn-primary">Check</button>
@@ -69,6 +69,12 @@
           </div>
         </div>
         <div class=row>
+          <div id="roomNumber" class=col-5>
+          </div>
+          <div id="bedNumber" class=col>
+          </div>
+        </div>
+        <div class=row>
           <div id="doctor" class=col-5>
           </div>
           <div id="gender" class=col-4>
@@ -76,16 +82,7 @@
           <div id="mobile" class=col-3>
           </div>
         </div>
-        <div class=row>
-          <div id="address" class=col>
-          </div>
-        </div>
-        <div class=row>
-          <div id="roomNumber" class=col-5>
-          </div>
-          <div id="bedNumber" class=col>
-          </div>
-        </div>
+
       </div>
       <form style='display:none' id="ivSelectForm">
         <div class="form-group">

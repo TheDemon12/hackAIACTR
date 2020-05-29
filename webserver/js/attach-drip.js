@@ -106,16 +106,14 @@ checkBtn.addEventListener('click', function () {
 				message.style.color = 'rgb(255,0,0)';
 			} else {
 				form.reset();
-				patientName.innerHTML = '<b>PATIENT NAME : </b>' + patient.name;
-				patientAge.innerHTML = '<b>PATIENT AGE : </b>' + patient.age;
+				patientName.innerHTML = '<b>NAME : </b>' + patient.name;
+				patientAge.innerHTML = '<b>AGE : </b>' + patient.age;
 				patientBloodGroup.innerHTML =
-					'<b>PATIENT BLOOD GROUP : </b>' + patient.bloodGroup;
-				patientMobile.innerHTML = '<b>PATIENT MOBILE : </b>' + patient.mobile;
-				patientGender.innerHTML = '<b>PATIENT GENDER : </b>' + patient.gender;
+					'<b>BLOOD GROUP : </b>' + patient.bloodGroup;
+				patientMobile.innerHTML = '<b>MOBILE : </b>' + patient.mobile;
+				patientGender.innerHTML = '<b>GENDER : </b>' + patient.gender;
 				consultingDoctor.innerHTML =
-					'<b>CONSULTING DOCTOR : </b>' + patient.doctor;
-				patientAddress.innerHTML =
-					'<b>PATIENT ADDRESS : </b>' + patient.address;
+					'<b>CONSULT. DOCTOR : </b>' + patient.doctor;
 				roomNumber.innerHTML = '<b>ROOM NUMBER: </b>' + patient.roomNumber;
 				bedNumber.innerHTML = '<b>BED NUMBER : </b>' + patient.bedNumber;
 				pat.style.visibility = 'visible';
