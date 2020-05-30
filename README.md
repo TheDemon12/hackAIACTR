@@ -6,9 +6,9 @@ An IoT based automatic alerting device that consists of laser and a precise Ligh
 
 <br>
 
-**Link for web application**
+### Required details for using web application
 
-Web App: [Smart-IV Server](http://www.thedemon12.xyz)
+**Web App: [Smart-IV Server](http://www.thedemon12.xyz)**
 
 *Default credentials for using Web App*
 
@@ -29,9 +29,9 @@ Note:Show entry will only be visible only when drip is attached to the patients.
 
 
 
-**Advantages of Smart-IV**
+### Advantages of Smart-IV
 
-In time of emergencies like Covid-19,our solution has numerous advantages.
+**In time of emergencies like Covid-19,our solution has numerous advantages.**
 
 • Reduced work (as staff will not have to monitor IV bottles manually.)
 
@@ -46,7 +46,7 @@ In time of emergencies like Covid-19,our solution has numerous advantages.
 • Our application can also be used for Hospital Database Management.
 
 
-**Hardware Components Used**
+### Hardware Components Used
 
 1.NodeMCU
 
@@ -59,7 +59,7 @@ In time of emergencies like Covid-19,our solution has numerous advantages.
 5.Power supply
 
   
-**Implementation:**
+### Implementation:
 
 •	Using IoT, we can solve the problem of 'empty bottles’. We’re using LDR sensor which is connected to NodeMcu.
 
@@ -75,9 +75,10 @@ In time of emergencies like Covid-19,our solution has numerous advantages.
 
 <img src = "/images/smartiv-git.PNG" height = "200" width="800" align="center" hspace="10" vspace="10">
 
-The cost of the hardware product is estimated to be not more than Rs. 400 which makes it highly economical to be employed in the hospitals.
 
-**IoT Device Setup**
+**The cost of the hardware product is estimated to be not more than Rs. 400 which makes it highly economical to be employed in the hospitals.**
+
+### IoT Device Setup
 
 <table align="center">
 
@@ -96,7 +97,7 @@ The cost of the hardware product is estimated to be not more than Rs. 400 which 
 	</tr>
 </table>
 
-**Working of web application**
+### Working of web application
 
 With the new entry of a patient is created using web application, a record is generated with a unique patientID which is stored in a firebase-database which will help hospitals in managing records in more manageable manner. Similarly, whenever a "drip entry" is created using the application, the corresponding data is stored in active drip database. The creation of drip entry assigns a IoT device with the highest priority and we are good to go. And the application consists of monitoring drip status and delete entry options too. Monitoring drip status will allow hospital staff to keep track of the IV bottles connected to the patients.Detach drip option will remove the details of patient from active drip database. Delete entry option can be used when patient gets discharged and patient can only be discharged when any drip isn't attached to the patient. Delete entry option will remove the entries from active drip database and patient database hence move all the details to the archive database for future use.
   
@@ -182,7 +183,7 @@ With the new entry of a patient is created using web application, a record is ge
 	</tr>
 </table>
 
-**Technology Stack**
+### Technology Stack
 
  - Internet of Things
  - Embedded c
@@ -192,13 +193,13 @@ With the new entry of a patient is created using web application, a record is ge
  - Javascript
  - AWS Server - Apache 2
  
- **Dependencies**
+ ### Dependencies
 
 1.Firebase
 
 2.Internet connection
 
-**Future Aspects**
+### Future Aspects
 
 1.This setup can also be used to measure the drip rate using the same Laser - LDR principle which is needed to be set by nurse according to the value calculated using formula. If the drip rate changes in the course of transfusion, then it will notify the staff which in turn can take the necessary steps.
 
