@@ -62,5 +62,62 @@ The cost of the hardware product is estimated to be not more than Rs. 400 which 
 		<td><img src="/images/hardware/4.PNG" height="180" width="350">
 		</td>
 	</tr>
+</table>
 
+**Working of web application**
+
+With the new entry of a patient is created using web application, a record is generated with a unique patientID which is stored in a firebase-database which will help hospitals in managing records in more manageable manner. Similarly, whenever a "drip entry" is created using the application, the corresponding data is stored in active drip database. The creation of drip entry assigns a IoT device with the highest priority and we are good to go. And the application consists of monitoring drip status and delete entry options too. Monitoring drip status will allow hospital staff to keep track of the IV bottles connected to the patients.Detach drip option will remove the details of patient from active drip database. Delete entry option can be used when patient gets discharged and patient can only be discharged when any drip isn't attached to the patient. Delete entry option will remove the entries from active drip database and patient database hence move all the details to the archive database for future use.
   
+<table align="center">
+	<tr>
+		<td>
+			Login Page
+		</td>
+		<td>
+			Home Page(Options:1)
+		</td>
+ </tr>
+ <tr>
+ 	<td>
+   	<img src="/images/webserver/login.PNG" height="180" width="350">
+		</td>
+		<td><img src="/images/webserver/options1.PNG" height="180" width="350">
+		</td>
+ </tr>
+ <tr>
+ <td>
+			Home Page(options:2)
+		</td>
+		<td>
+			Add new entry Page
+		</td>
+	</tr>
+	<tr>
+		<td><img src="/images/webserver/options2.PNG" height="180" width="350">
+		</td>
+		<td><img src="/images/webserver/add_new.PNG" height="180" width="350">
+		</td>
+	</tr>
+<tr>
+ <td>
+			Successful attached drip Page
+		</td>
+		<td>
+			Unsuccessful attached drip Page
+		</td>
+	</tr>
+	<tr>
+		<td><img src="/images/webserver/attach1.png" height="180" width="350">
+		</td>
+		<td><img src="/images/webserver/attach2.png" height="180" width="350">
+		</td>
+	</tr>
+<tr>
+ <td> 	              Successful detach drip Page
+		</td>
+	</tr>
+	<tr>
+		<td><img src="/images/webserver/detach1.png" height="180" width="350">
+		</td>
+	</tr>
+</table>
