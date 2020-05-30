@@ -107,17 +107,48 @@ With the new entry of a patient is created using web application, a record is ge
 		</td>
 	</tr>
 	<tr>
-		<td><img src="/images/webserver/attach1.png" height="180" width="350">
+		<td><img src="/images/webserver/attach1.PNG" height="180" width="350">
 		</td>
-		<td><img src="/images/webserver/attach2.png" height="180" width="350">
+		<td><img src="/images/webserver/attach2.PNG" height="180" width="350">
 		</td>
 	</tr>
 <tr>
  <td> 	              Successful detach drip Page
 		</td>
-	</tr>
-	<tr>
-		<td><img src="/images/webserver/detach1.png" height="180" width="350">
+	 <td> 	              Unsuccessful detach drip Page
 		</td>
 	</tr>
+	<tr>
+		<td><img src="/images/webserver/detach1.PNG" height="180" width="350">
+		</td>
+		<td><img src="/images/webserver/detach2.PNG" height="180" width="350">
+		</td>
+	</tr>
+
 </table>
+
+**Technology Stack**
+
+ - Internet of Things
+ - Embedded c
+ - Firebase
+ - Firebase Real Time Database
+ - HTML,CSS
+ - Javascript
+ - AWS Server - Apache 2
+ 
+ **Dependencies**
+
+1.Firebase
+
+2.Internet connection
+
+**Future Aspects**
+
+1.This setup can also be used to measure the drip rate using the same Laser - LDR principle which is needed to be set by nurse according to the value calculated using formula. If the drip rate changes in the course of transfusion, then it will notify the staff which in turn can take the necessary steps.
+
+2.Additionally, the QR/Barcode Scanner included in the app can be used to check the validity of the drip bottles present in hospitals. QR/Barcode can even be used to manage the database of supply of IV fluids in the hospital.
+
+3.We'll build mobile application for more efficiency.
+
+**According to the Bloomberg healthiest country index, India has slipped down to the position 120 out of 169 countries. As the dire need of drip system is evident in most medical facilities, the usage of Smart-IV is limitless.In order to outperform our current potential in future emergencies it's important to use technologically advanced solution in the medical industry.**
