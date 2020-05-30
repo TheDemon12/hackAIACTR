@@ -14,6 +14,10 @@ Web App: [Smart-IV Server](http://www.thedemon12.xyz)
 
 *-Boxes with **Green shadow** on DRIP STATUS activity represents that IV bottle still contains adequate amount of fluid.*
 
+**Advantages of Smart-IV**
+
+
+
 **Hardware Components Used**
 
 1.NodeMCU
@@ -124,7 +128,30 @@ With the new entry of a patient is created using web application, a record is ge
 		<td><img src="/images/webserver/detach2.PNG" height="180" width="350">
 		</td>
 	</tr>
-
+<tr>
+ <td> 	             Check for assistance Page
+		</td>
+	 <td> 	      Patient discharge Page
+		</td>
+	</tr>
+	<tr>
+		<td><img src="/images/webserver/show-status.PNG" height="180" width="350">
+		</td>
+		<td><img src="/images/webserver/discharge1.PNG" height="180" width="350">
+		</td>
+	</tr>
+	<tr>
+ <td> 	             Successful patient discharge Page
+		</td>
+	 <td> 	      Unsuccessful patient discharge Page
+		</td>
+	</tr>
+	<tr>
+		<td><img src="/images/webserver/discharge3.PNG" height="180" width="350">
+		</td>
+		<td><img src="/images/webserver/discharge2.PNG" height="180" width="350">
+		</td>
+	</tr>
 </table>
 
 **Technology Stack**
