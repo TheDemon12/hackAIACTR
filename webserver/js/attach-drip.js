@@ -5,8 +5,8 @@ const form = document.getElementById('patIdForm');
 const patDiv = document.getElementById('pat');
 const ivForm = document.getElementById('ivSelectForm');
 const ivFluid = document.getElementById('ivSelect');
-var patientFound = 0;
-var dripFound = 0;
+var patientFound;
+var dripFound;
 document
 	.getElementById('inputPatientID')
 	.addEventListener('keypress', function (event) {
@@ -68,6 +68,7 @@ class Patient {
 let patient = new Patient();
 
 checkBtn.addEventListener('click', function () {
+	patientFound = 0;
 	pat.style.visibility = 'hidden';
 	message.style.visibility = 'hidden';
 	attachDripBtn.style.visibility = 'hidden';
@@ -124,6 +125,7 @@ checkBtn.addEventListener('click', function () {
 });
 
 attachDripBtn.addEventListener('click', function () {
+	dripFound = 0;
 	if (ivFluid.value) {
 		db2
 			.ref()

@@ -1,5 +1,5 @@
 const checkBtn = document.getElementById('check');
-const deattachDripBtn = document.getElementById('discharge');
+const dischargeBtn = document.getElementById('discharge');
 const message = document.getElementById('message');
 const form = document.getElementById('patIdForm');
 const patDiv = document.getElementById('pat');
@@ -69,7 +69,7 @@ checkBtn.addEventListener('click', function () {
 	patientFound = 0;
 	pat.style.visibility = 'hidden';
 	message.style.visibility = 'hidden';
-	deattachDripBtn.style.visibility = 'hidden';
+	dischargeBtn.style.visibility = 'hidden';
 	const patientID = document.getElementById('inputPatientID').value;
 	db1
 		.ref()
@@ -105,24 +105,25 @@ checkBtn.addEventListener('click', function () {
 				message.style.color = 'rgb(255,0,0)';
 			} else {
 				form.reset();
-				patientName.innerHTML = '<b>NAME : </b>' + patient.name;
-				patientAge.innerHTML = '<b>AGE : </b>' + patient.age;
+				patientName.innerHTML = '<b>PATIENT NAME : </b>' + patient.name;
+				patientAge.innerHTML = '<b>PATIENT AGE : </b>' + patient.age;
 				patientBloodGroup.innerHTML =
-					'<b>BLOOD GROUP : </b>' + patient.bloodGroup;
-				patientMobile.innerHTML = '<b>MOBILE : </b>' + patient.mobile;
-				patientGender.innerHTML = '<b>GENDER : </b>' + patient.gender;
+					'<b>PATIENT BLOOD GROUP : </b>' + patient.bloodGroup;
+				patientMobile.innerHTML = '<b>PATIENT MOBILE : </b>' + patient.mobile;
+				patientGender.innerHTML = '<b>PATIENT GENDER : </b>' + patient.gender;
 				consultingDoctor.innerHTML =
-					'<b>CONSULT. DOCTOR : </b>' + patient.doctor;
+					'<b>CONSULTING DOCTOR : </b>' + patient.doctor;
+				patientAddress.innerHTML =
+					'<b>PATIENT ADDRESS : </b>' + patient.address;
 				roomNumber.innerHTML = '<b>ROOM NUMBER: </b>' + patient.roomNumber;
 				bedNumber.innerHTML = '<b>BED NUMBER : </b>' + patient.bedNumber;
 				pat.style.visibility = 'visible';
-				deattachDripBtn.style.visibility = 'visible';
-				// ivForm.style.display = 'block';
+				dischargeBtn.style.visibility = 'visible';
 			}
 		});
 });
 
-deattachDripBtn.addEventListener('click', function () {
+dischargeBtn.addEventListener('click', function () {
 	dripFound = 0;
 	db2
 		.ref()
@@ -144,24 +145,36 @@ deattachDripBtn.addEventListener('click', function () {
 			});
 
 			if (dripFound == 0) {
-				message.innerHTML = 'ERROR : NO DRIP IS ATTACHED TO THE PATIENT';
+				removePatient();
+			} else {
+				message.innerHTML =
+					'ERROR : PATIENT IS STILL ATTACHED WITH DRIP!<br> DETACH DRIP FIRST';
 				message.style.visibility = 'visible';
 				message.style.color = 'rgb(255,0,0)';
-			} else {
-				removeDrip();
 			}
 		});
 });
 
-function removeDrip() {
-	message.innerHTML = 'SUCCESS : DRIP IS SUCCESSFULLY DETACHED';
+function removePatient() {
+	db1.ref().child(patient.id).remove();
+	message.innerHTML = 'SUCCESS : PATIENT IS DISCHARGED AND DATA IS ARCHIVED';
 	message.style.color = 'rgb(0,115,255)';
 	message.style.visibility = 'visible';
 
-	db2
-		.ref(`Room Number ${patient.roomNumber}`)
-		.child(`Bed Number ${patient.bedNumber}`)
-		.remove();
-
-	deattachDripBtn.style.visibility = 'hidden';
+	db3.ref(patient.id).set({
+		patientName: patient.name,
+		patientAge: patient.age,
+		patientBloodGroup: patient.bloodGroup,
+		patientMobile: patient.mobile,
+		patientGender: patient.gender,
+		consultingDoctor: patient.doctor,
+		patientAddress: patient.address,
+		roomNumber: patient.roomNumber,
+		bedNumber: patient.bedNumber,
+		patientEmergencyNumber: patient.emergencyNumber,
+		patientHealthScheme: patient.healthScheme,
+		patientInsurance: patient.insurance,
+		patientMedHistory: patient.medHistory,
+		patientSymptoms: patient.symptoms,
+	});
 }
