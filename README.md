@@ -10,9 +10,24 @@ An IoT based automatic alerting device that consists of laser and a precise Ligh
 
 Web App: [Smart-IV Server](http://www.thedemon12.xyz)
 
+*Default credentials for using Web App*
+
+Login Id: kartik@hospital.com
+
+Password: abc123
+
+Patient Id for using attach and detach feature: 1732034, 1937210 
+
+Note:Show entry will only be visible only when drip is attached to the patients.
+
 *-Boxes with **Red shadow** on DRIP STATUS activity represents that IV bottle is about to get emptied.*
 
 *-Boxes with **Green shadow** on DRIP STATUS activity represents that IV bottle still contains adequate amount of fluid.*
+
+ *If you want to create your own Login Id and password then you can create simply by adding your id and password in the login page
+ and the password entered will be used for future logins for that Login id.*
+
+
 
 **Advantages of Smart-IV**
 
@@ -28,6 +43,7 @@ In time of emergencies like Covid-19,our solution has numerous advantages.
 
 • Usage of Realtime database leads to no refreshing of pages on web application.Hence, application becomes easy to use.
 
+• Our application can also be used for Hospital Database Management.
 
 
 **Hardware Components Used**
