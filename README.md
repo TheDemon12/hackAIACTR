@@ -26,24 +26,6 @@ Web App: [Smart-IV Server](http://www.thedemon12.xyz)
 
 5.Power supply
 
-**IoT Device Setup**
-<table align="center">
-
- <tr>
- 	<td>
-   	<img src="/images/hardware/1.PNG" height="180" width="350">
-		</td>
-		<td><img src="/images/hardware/2.PNG" height="180" width="350">
-		</td>
- </tr>
-	<tr>
-		<td><img src="/images/hardware/3.PNG" height="180" width="350">
-		</td>
-		<td><img src="/images/hardware/4.PNG" height="180" width="350">
-		</td>
-	</tr>
-<tr>
-  
   
 **Implementation:**
 
@@ -62,3 +44,23 @@ Web App: [Smart-IV Server](http://www.thedemon12.xyz)
 <img src = "/images/smartiv-git.PNG" height = "200" width="800" align="center" hspace="10" vspace="10">
 
 The cost of the hardware product is estimated to be not more than Rs. 400 which makes it highly economical to be employed in the hospitals.
+
+**IoT Device Setup**
+
+<table align="center">
+
+ <tr>
+ 	<td>
+   	<img src="/images/hardware/1.PNG" height="180" width="350">
+		</td>
+		<td><img src="/images/hardware/2.PNG" height="180" width="350">
+		</td>
+ </tr>
+	<tr>
+		<td><img src="/images/hardware/3.PNG" height="180" width="350">
+		</td>
+		<td><img src="/images/hardware/4.PNG" height="180" width="350">
+		</td>
+	</tr>
+
+  
