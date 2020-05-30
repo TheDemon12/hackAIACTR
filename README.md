@@ -116,10 +116,10 @@ With the new entry of a patient is created using web application, a record is ge
 	</tr>
 <tr>
  <td>
-			Successful attached drip Page
+			Attach drip Page
 		</td>
 		<td>
-			Unsuccessful attached drip Page
+			Successful attached drip Page
 		</td>
 	</tr>
 	<tr>
@@ -129,9 +129,9 @@ With the new entry of a patient is created using web application, a record is ge
 		</td>
 	</tr>
 <tr>
- <td> 	              Successful detach drip Page
+ <td> 	              Detach drip Page
 		</td>
-	 <td> 	              Unsuccessful detach drip Page
+	 <td> 	              Successful detach drip Page
 		</td>
 	</tr>
 	<tr>
