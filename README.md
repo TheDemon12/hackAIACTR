@@ -27,4 +27,38 @@ Web App: [Smart-IV Server](http://www.thedemon12.xyz)
 5.Power supply
 
 **IoT Device Setup**
+<table align="center">
 
+ <tr>
+ 	<td>
+   	<img src="/images/hardware/1.PNG" height="180" width="350">
+		</td>
+		<td><img src="/images/hardware/2.PNG" height="180" width="350">
+		</td>
+ </tr>
+	<tr>
+		<td><img src="/images/hardware/3.PNG" height="180" width="350">
+		</td>
+		<td><img src="/images/hardware/4.PNG" height="180" width="350">
+		</td>
+	</tr>
+<tr>
+  
+  
+**Implementation:**
+
+•	Using IoT, we can solve the problem of 'empty bottles’. We’re using LDR sensor which is connected to NodeMcu.
+
+•	LDR will help us detect if the fluid is below a critical level.
+
+•	The NodeMCU will then send their data to the firebase.
+
+•	Buzzer will even notify the patient about the fluid level.
+
+•	The data from the firebase will then be accessed by the web application.
+
+•	The nurse and doctors will be notified about the fluid level using web application.
+
+<img src = "/images/smartiv-git.PNG" height = "200" width="800" align="center" hspace="10" vspace="10">
+
+The cost of the hardware product is estimated to be not more than Rs. 400 which makes it highly economical to be employed in the hospitals.
