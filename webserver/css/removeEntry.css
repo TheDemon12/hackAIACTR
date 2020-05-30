@@ -2,8 +2,8 @@ html {
 	min-height: 100vh;
 }
 body {
-	background-color: #fc9842;
-	background-image: linear-gradient(315deg, #fc9842 0%, #fe5f75 74%);
+	background-color: #0beef9;
+	background-image: linear-gradient(315deg, #0beef9 0%, #48a9fe 74%);
 
 	/* background-color: #25CABF; */
 }
